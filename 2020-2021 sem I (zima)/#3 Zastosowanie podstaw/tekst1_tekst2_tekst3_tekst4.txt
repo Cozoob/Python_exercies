@@ -1,0 +1,24 @@
+TEKST1.TXT
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+---EOF---
+
+TEKST2.TXT
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+---EOF---
+
+TEKST3.TXT
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+---EOF---
+
+TEKST4.TXT
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+---EOF---
+

@@ -1,0 +1,6 @@
+Mark Twain -> Book Lovers, Old School Club, Lovecraft
+John Doe -> Nonexistents, Generic People, Jane Smith
+Jane Smith -> Mark Twain, John Doe, Book Lovers
+Martin Kozub -> Book Lovers, Mark Twain, Gaming Lovers
+Adryen Kot -> Book Lovers, Mark Twain
+Oppse -> John Doe

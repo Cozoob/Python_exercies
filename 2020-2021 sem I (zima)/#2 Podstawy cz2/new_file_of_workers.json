@@ -1,0 +1,16 @@
+{
+  "name": "Steve",
+  "age": "22",
+  "role": "programmer",
+  "pay": "10000"
+}{
+  "name": "Karen",
+  "age": "35",
+  "role": "manager",
+  "pay": "5000"
+}{
+  "name": "John",
+  "age": "30",
+  "role": "analyst",
+  "pay": "7000"
+}
