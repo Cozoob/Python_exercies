@@ -63,6 +63,10 @@ class University:
         else:
             self.employees = {employee}
 
+    def remove_employee(self, employee):
+        if not self.employees:
+            self.employees.remove(employee)
+
 
 class Course(University):
 
@@ -99,7 +103,6 @@ class Faculty(University):
     def internal_number(self, new_internal_number):
         self._internal_number = new_internal_number
 
-
 # Virtual Dean's Office
 class DeanOffice(University):
 
@@ -111,22 +114,64 @@ class DeanOffice(University):
 
     # argument student should be an object
     def add_new_student(self, student):
-        if not self.students:
+        if not self.students and student not in self.students:
             self.students.add(student)
         else:
             self.students = {student}
 
     # argument student and course should be an object
     def add_student_to_course(self, student, course):
-        if not student in course.students:
+        if student not in course.students:
             course.add_student(student)
         else:
             print(f"{student.first_name} {student.last_name} is already in the course {course.name}.")
 
     # argument student should be an object
-    def delete_student(self, student):
+    def remove_student(self, student):
         for course in self.courses:
             if student in course:
                 course.remove_student(student)
 
         self.students.remove(student)
+
+    # argument employee should be an object
+    def add_new_employee(self, employee):
+        if not self.employees and employee not in self.employees:
+            self.employees.add(employee)
+        else:
+            self.employees = {employee}
+
+    # argument employee and faculty should be an object
+    def add_employee_to_faculty(self, employee, faculty):
+        if employee not in faculty.employees:
+            faculty.add_employee(employee)
+        else:
+            print(f"{employee.first_name} {employee.last_name} is already in the faculty {faculty.name}.")
+
+    # argument employee should be an object
+    def change_employee_to_lecturer(self, employee, vote_points):
+        return Lecturer(employee.first_name, employee.last_name, employee.addres, employee.employee_ID(), vote_points, employee.faculty, employee.courses)
+
+    # argument faculty should be an object
+    def add_faculty(self, faculty):
+        if not self.faculties and faculty not in self.faculties:
+            self.faculties.add(faculty)
+        else:
+            self.faculties = {faculty}
+
+    # argument faculty should be an object
+    def remove_faculty(self, faculty):
+        if not self.faculties:
+            self.faculties.remove(faculty)
+
+    # argument course should be an object
+    def add_course(self, course):
+        if not self.courses and course not in self.courses:
+            self.courses.add(course)
+        else:
+            self.courses = {course}
+
+    # argument course should be an object
+    def remove_course(self, course):
+        if not self.courses:
+            self.courses.remove(course)
