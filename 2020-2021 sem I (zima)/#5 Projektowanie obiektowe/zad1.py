@@ -10,6 +10,8 @@ class Human:
         self.faculty = faculty
         self.courses = courses
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
 
 class Student(Human):
 
@@ -57,9 +59,9 @@ class University:
 
     def add_employee(self, employee):
         if not self.employees:
-            self.employees.append(employee)
+            self.employees.add(employee)
         else:
-            self.employees = [employee]
+            self.employees = {employee}
 
 
 class Course(University):
@@ -70,11 +72,16 @@ class Course(University):
         self.faculty = faculty
         self.students = students
 
+    # argument student should be an object
     def add_student(self, student):
         if not self.students:
-            self.students.append(student)
+            self.students.add(student)
         else:
-            self.students = [student]
+            self.students = {student}
+
+    def remove_student(self, student):
+        if not self.students:
+            self.students.remove(student)
 
 
 class Faculty(University):
@@ -91,3 +98,35 @@ class Faculty(University):
     @internal_number.setter
     def internal_number(self, new_internal_number):
         self._internal_number = new_internal_number
+
+
+# Virtual Dean's Office
+class DeanOffice(University):
+
+    def __init__(self, name, description=None, employees=None, students=None, courses=None, faculties=None):
+        super(DeanOffice, self).__init__(name, description, employees)
+        self.students = students
+        self.courses = courses
+        self.faculties = faculties
+
+    # argument student should be an object
+    def add_new_student(self, student):
+        if not self.students:
+            self.students.add(student)
+        else:
+            self.students = {student}
+
+    # argument student and course should be an object
+    def add_student_to_course(self, student, course):
+        if not student in course.students:
+            course.add_student(student)
+        else:
+            print(f"{student.first_name} {student.last_name} is already in the course {course.name}.")
+
+    # argument student should be an object
+    def delete_student(self, student):
+        for course in self.courses:
+            if student in course:
+                course.remove_student(student)
+
+        self.students.remove(student)
