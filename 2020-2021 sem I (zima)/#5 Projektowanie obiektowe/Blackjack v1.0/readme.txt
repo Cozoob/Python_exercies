@@ -1,0 +1,1 @@
+To play just click twice on blackjack.exe

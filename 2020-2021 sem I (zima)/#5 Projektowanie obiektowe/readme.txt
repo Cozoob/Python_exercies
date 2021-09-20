@@ -1,0 +1,1 @@
+Install blackjack to the easy-accessible folder since if you want to play you need to check this folder after installation.
