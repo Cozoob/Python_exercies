@@ -2,6 +2,7 @@
 from random import randint
 from time import sleep
 
+
 class Human:
 
     def __init__(self, name, money, cards=None):
@@ -35,22 +36,6 @@ class Human:
         return points + 11
 
 
-class Player(Human):
-
-    def __init__(self, name, money, cards=None):
-        super(Player, self).__init__(name, money, cards)
-
-    # don't take another card
-    def stand(self):
-        return self.get_points()
-
-
-class Dealer(Human):
-
-    def __init__(self, name, money, cards=None):
-        super(Dealer, self).__init__(name, money, cards)
-
-
 class Card:
 
     def __init__(self, name, value):
@@ -62,12 +47,6 @@ class Card:
             return f"{self.name} which worths 1 or 11."
 
         return f"{self.name} which worths {self.value}."
-
-
-class Parser:
-
-    def __init__(self, name_of_player):
-        self.name_of_player = name_of_player
 
 
 def show_the_instructions():
@@ -100,11 +79,11 @@ if __name__ == '__main__':
     print("Hello there!")
     player_name = input("Please write your name:\n")
 
-    print("Do you want instructions?(y/n)")
+    print("Do you want instructions in polish?(y/n)")
     tutorial = input()
     while not (tutorial == "y" or tutorial == "n"):
         print("Please write \"y\" or \"n\"!")
-        print("Do you want instructions?(y/n)")
+        print("Do you want instructions in polish?(y/n)")
         tutorial = input()
     if tutorial == "y":
         show_the_instructions()
@@ -117,8 +96,8 @@ if __name__ == '__main__':
     end = False
     while not end:
         # randomise two cards for the Dealer and the player
-        dealer = Dealer("Dealer", 100, [])
-        player = Player(player_name, 100, [])
+        dealer = Human("Dealer", 100, [])
+        player = Human(player_name, 100, [])
         for _ in range(2):
             dealer.hit(cards)
             player.hit(cards)
