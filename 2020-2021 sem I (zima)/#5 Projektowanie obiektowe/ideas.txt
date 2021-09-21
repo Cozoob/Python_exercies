@@ -1,0 +1,6 @@
+1. Repair the installation programme.
+2. Add option to play with money and with at least one another AI player.
+3. Add option to choose levels:
+-easy(random tactic of AI players)
+-hard(count tactic of AI players)
+https://en.wikipedia.org/wiki/Card_counting#Systems
