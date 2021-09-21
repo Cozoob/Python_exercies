@@ -1,6 +1,7 @@
 # Created by Marcin "Cozoob" Kozub 20.09.2021
 from random import randint
 from time import sleep
+import io
 
 
 class Human:
@@ -50,23 +51,9 @@ class Card:
 
 
 def show_the_instructions():
-    print("""Blackjack to popularna kasynowa gra karciana, w której celem \n\
-gracza jest pokonanie krupiera poprzez uzyskanie sumy 21 punktów w kartach,\n\
-nie przekraczając jednak 21. Punktacja kart jest następująca:\n\
-●	Karty od dwójki do dziesiątki mają wartość równą numerowi karty.\n\
-●	Walet, Dama i Król mają wartość równą 10 punktów.\n\
-●	As ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.\n\
-Na początku gry gracz i krupier dostają po dwie karty.\n\
-Obydwie karty gracza są odkryte,\n\
-natomiast tylko jedna karta krupiera jest pokazana graczowi.\n\
-Gracz teraz może podjąć decyzje o swoim następnym ruchu. Gracz ma następujące możliwości:\n\
-●	Dobrać kartę (hit).\n\
-●	Nie dobierać kart (stand).\n\
-Jeżeli gracz po dobraniu kart ma więcej niż 21 punktów, przegrywa zakład i krupier zabiera jego żetony.\n\
-Jeżeli natomiast gracz ma 21 punktów lub mniej, krupier odkrywa swoją zakrytą kartę i w zależności od liczby\n\
-jego punktów może dobrać więcej kart. Krupier musi grać według następujących przepisów: wziąć kartę,\n\
-jeżeli ma 16 punktów lub mniej i nie brać więcej kart, gdy ma 17 punktów lub więcej (niezależnie, ile punktów ma gracz).\n\
-Wygrywa ten, który ma sumę punktów bliższą lub równą 21.""")
+    with io.open("instructions_in_polish.txt", "r", encoding="utf8") as file:
+        for line in file:
+            print(line, end="")
 
 
 if __name__ == '__main__':

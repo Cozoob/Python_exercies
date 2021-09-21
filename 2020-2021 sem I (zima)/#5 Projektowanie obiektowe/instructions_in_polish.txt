@@ -1,0 +1,20 @@
+Blackjack to popularna kasynowa gra karciana, w której celem gracza jest pokonanie
+krupiera poprzez uzyskanie sumy 21 punktów w kartach, nie przekraczając jednak 21.
+Punktacja kart jest następująca:
+●	Karty od dwójki do dziesiątki mają wartość równą numerowi karty.
+●	Walet, Dama i Król mają wartość równą 10 punktów.
+●	As ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.
+
+Na początku gry gracz i krupier dostają po dwie karty.
+Obydwie karty gracza są odkryte, natomiast tylko jedna karta krupiera jest pokazana
+graczowi. Gracz teraz może podjąć decyzje o swoim następnym ruchu.
+Gracz ma następujące możliwości:
+●	Dobrać kartę (hit).
+●	Nie dobierać kart (stand).
+
+Jeżeli gracz po dobraniu kart ma więcej niż 21 punktów, przegrywa zakład i krupier
+zabiera jego żetony. Jeżeli natomiast gracz ma 21 punktów lub mniej, krupier odkrywa
+swoją zakrytą kartę i w zależności od liczby jego punktów może dobrać więcej kart.
+Krupier musi grać według następujących przepisów: wziąć kartę, jeżeli ma 16 punktów
+lub mniej i nie brać więcej kart, gdy ma 17 punktów lub więcej (niezależnie,
+ile punktów ma gracz). Wygrywa ten, który ma sumę punktów bliższą lub równą 21.
