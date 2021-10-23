@@ -21,13 +21,17 @@ if __name__ == '__main__':
 
     flag = True
     while flag:
+        print("If you want end type \" exit \"")
         equation = input("> ")
         if equation == 'exit':
             flag = False
             # exit()
             break
-
-        num1, operation, num2 = equation.split()
+        try:
+            num1, operation, num2 = equation.split()
+        except ValueError:
+            print("Wrong arguments!")
+            continue
         flag = what_operation(operation, int(num1), int(num2))
         if flag is False:
             flag = True

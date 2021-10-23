@@ -18,7 +18,11 @@ def what_operation(operation, num1, num2):
 if __name__ == '__main__':
     flag = True
     while flag:
-        num1, operation, num2 = input("> ").split()
+        try:
+            num1, operation, num2 = input("> ").split()
+        except ValueError:
+            print("Wrong arguments!")
+            continue
         flag = what_operation(operation, int(num1), int(num2))
         if flag:
             print("The unknown operation or wrong integers.")

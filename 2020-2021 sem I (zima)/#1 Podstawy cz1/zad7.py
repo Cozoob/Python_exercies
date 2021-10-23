@@ -2,7 +2,11 @@
 
 if __name__ == '__main__':
 
-    how_many_rows = int(input("> "))
+    try:
+        how_many_rows = int(input("> "))
+    except ValueError:
+        print("The argument must be an integer!")
+        exit()
     row = "x"
 
     for i in range(0, how_many_rows):

@@ -1,4 +1,5 @@
 # Created by Marcin "Cozoob" Kozub 30.09.2021
+import math
 from math import inf
 from statistics import median, mean
 
@@ -8,18 +9,18 @@ def get_influencer_metrics(blog_posts):
     the_likes = sum(post.get("Likes", 0) for post in blog_posts)
     likes_comments_ratios = []
 
-    the_photos = []
     for post in blog_posts:
         try:
-            likes_comments_ratios.append(post["Likes"] / post["Comments"])
-            the_photos.append(post["Photos"])
+            likes = post.get("Likes", 0)
+            comments = post.get("Comments", 0)
+            ratio = likes / comments
+            likes_comments_ratios.append(round(ratio, 3))
         except ZeroDivisionError:
-            pass
-        except KeyError:
-            pass
-    the_photos.sort()
+            likes_comments_ratios.append(math.inf)
 
-    return the_likes, round(mean(likes_comments_ratios), 3), median(the_photos)
+    photos_median = median([post.get("Photos", 0) for post in blog_posts])
+
+    return the_likes, likes_comments_ratios, photos_median
 
 if __name__ == '__main__':
     blog_posts = [

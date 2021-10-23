@@ -18,9 +18,17 @@ def what_operation(operation, num1, num2):
 if __name__ == '__main__':
     flag = True
     while flag:
-        num1 = int(input("> "))
+        try:
+            num1 = int(input("> "))
+        except ValueError:
+            print("The argument must be an integer.")
+            continue
         operation = input("> ")
-        num2 = int(input("> "))
+        try:
+            num2 = int(input("> "))
+        except ValueError:
+            print("The argument must be an integer.")
+            continue
         flag = what_operation(operation, num1, num2)
         if flag:
-            print("The unknown operation or wrong integers.")
+            print("The unknown operation.")

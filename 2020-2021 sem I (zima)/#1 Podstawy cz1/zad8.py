@@ -1,8 +1,11 @@
 # Created by Marcin "Cozoob" Kozub 17.07.2021
 
 if __name__ == '__main__':
-
-    budget = int(input("> "))
+    try:
+        budget = int(input("> "))
+    except ValueError:
+        print("The argument must be an integer!")
+        exit()
     row = "x"
 
     while budget > 0:
