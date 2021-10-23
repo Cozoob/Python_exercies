@@ -1,0 +1,5 @@
+WARNING:root:Old Numpy version detected
+DEBUG:root:Library check finished
+WARNING:root:No config file detected, using defaults
+CRITICAL:root:Could not connect to the main database (db: Northwind)
+CRITICAL:root:Could not connect to the secondary database (db: ClientsMongoDB)
